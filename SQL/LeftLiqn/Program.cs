@@ -62,10 +62,12 @@ namespace LeftLiqn
                         };
 
             //Printing result of left join
+            Console.Write("--------------------LEFT JOIN-----------------------");
+
             Console.WriteLine(string.Join("\n", Ljoin.Select(emp => " Employee Name = " +
 
             emp.EmployeeName + ", Project Name = " + emp.ProjectName).ToArray<string>()));
-
+            Console.Write("--------------------RIGHT JOIN-----------------------");
             //printing result of right outer join
             Console.WriteLine(string.Join("\n", RJoin.Select(emp => " Employee Name = " +
 
