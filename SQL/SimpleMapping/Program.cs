@@ -15,24 +15,21 @@ namespace SimpleMapping
         {
             ConfigureAutoMapper();
 
-            Employee employee = GetEmployee();
+            Employee employee = Employee;
 
             EmployeeDto employeeDto = Mapper.Map<Employee, EmployeeDto>(employee);
 
             Console.WriteLine($"{employeeDto.LastName} {employeeDto.LastName} - {employeeDto.Salary}");
         }
 
-        private static Employee GetEmployee()
+        private static Employee Employee => new Employee()
         {
-            return new Employee()
-            {
-                FirstName = "Thinh",
-                LastName = "Thanh",
-                Address = "Can tho",
-                BirthDate = new DateTime(1997, 07, 09),
-                Salary = 1000000000m
-            };
-        }
+            FirstName = "Thinh",
+            LastName = "Thanh",
+            Address = "Can tho",
+            BirthDate = new DateTime(1997, 07, 09),
+            Salary = 1000000000m
+        };
 
         private static void ConfigureAutoMapper()
         {
